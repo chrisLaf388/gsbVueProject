@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8 login-form-1 center px-0 py-4">
-          <h3 class="text-center text-white mb-4">Voici les rapports avec le mot clé : {{ getMotCle }}</h3>
+          <h3 class="text-center text-white mb-4">
+            Voici les rapports avec le mot clé : {{ getMotCle }}
+          </h3>
           <div id="content">
             <div id="labels" class="justify-content-between px-1">
               <p class="text-white">Date</p>
@@ -34,12 +36,12 @@
               </ul>
             </div>
             <router-link
-                id="routeur"
-                type="submit"
-                class="btn btnSubmit d-block m-auto rounded-pill bg-transparent text-danger px-3 py-2 border-danger fs-5 border-2"
-                to="/rapportRedacteurListe"
-                >Annuler</router-link
-              >
+              id="routeur"
+              type="submit"
+              class="btn btnSubmit d-block m-auto rounded-pill bg-transparent text-danger px-3 py-2 border-danger fs-5 border-2"
+              to="/rapportRedacteurListe"
+              >Annuler</router-link
+            >
           </div>
         </div>
         <div class="col-2"></div>
@@ -51,8 +53,8 @@
 <script>
 import axios from "axios";
 export default {
-  data(){
-    return{
+  data() {
+    return {
       info: null,
     };
   },
@@ -61,13 +63,16 @@ export default {
       //recupérer login via localStorage pour afficher la liste des rapports lié aux visiteurs
 
       const dataJson = await axios
-        .get("http://localhost:3002/gsb/rapport?champ=bilan&motcle="+this.$store.getters.getMotCleFromStore
-        ,{
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        })
+        .get(
+          "http://localhost:3002/gsb/rapport?champ=bilan&motcle=" +
+            this.$store.getters.getMotCleFromStore,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        )
         .catch((e) => {
           console.log(e);
         })
@@ -81,17 +86,17 @@ export default {
   },
   //"localhost:3002/gsb/rapport?champ=bilan&motcle="+this.$store.getters.getMotCleFromStore
   computed: {
-    getMotCle: function() {
-        return this.$store.getters.getMotCleFromStore
-    }
+    getMotCle: function () {
+      return this.$store.getters.getMotCleFromStore;
+    },
   },
   mounted() {
     this.listeRapportMotCle();
-  }
-}
+  },
+};
 </script>
 
-<style>
+<style scoped>
 main {
   width: 100%;
   height: 90vh;

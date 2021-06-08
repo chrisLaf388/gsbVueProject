@@ -92,7 +92,7 @@ export default {
       //recupérer login via localStorage pour afficher la liste des rapports lié aux visiteurs
 
       const dataJson = await axios
-        .get("http://localhost:3002/gsb/rapport/", {
+        .get("http://localhost:3002/gsb/rapport", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -113,10 +113,10 @@ export default {
       localStorage.setItem("rapportId", id);
       this.$router.push("/rapportRedacteurFiche");
     },
-    rechercheMot: function (){
-      this.$store.dispatch('setMotCle', this.motcle)
+    rechercheMot: function () {
+      this.$store.dispatch("setMotCle", this.motcle);
       this.$router.push("/rapportRedacteurMotCle");
-    },      
+    },
   },
   mounted() {
     this.listeRapport();

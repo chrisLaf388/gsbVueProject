@@ -11,7 +11,7 @@
     <div
       class="d-flex justify-content-end align-items-center"
       id="connexion"
-      v-if="getLogin"
+      v-if="getLogin && getLogin !== 'null'"
     >
       <div class="fs-5 mr-5 text-primary" id="pseudo">
         Bonjour, {{ getLogin }}
