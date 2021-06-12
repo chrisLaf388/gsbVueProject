@@ -16,13 +16,13 @@
               Bilan: <span id="bilan"> {{ bilan }} </span>
             </p>
           </div>
-         <router-link
-                id="routeur"
-                type="submit"
-                class="btn btnSubmit d-block m-auto rounded-pill bg-transparent text-danger px-3 py-2 border-danger fs-5 border-2"
-                to="/rapportRedacteurListe"
-                >Retour</router-link
-              >
+          <router-link
+            id="routeur"
+            type="submit"
+            class="btn btnSubmit d-block m-auto rounded-pill bg-transparent text-danger px-3 py-2 border-danger fs-5 border-2"
+            to="/rapportRedacteurListe"
+            >Retour</router-link
+          >
         </div>
         <div class="col-4"></div>
       </div>
@@ -47,7 +47,7 @@ export default {
     afficherFiche: async function () {
       await axios
         .get(
-          "http://localhost:3002/gsb/rapport/" +
+          "http://localhost:8080/gsb/rapport/" +
             localStorage.getItem("rapportId"),
           {
             withCredentials: true,
@@ -67,7 +67,7 @@ export default {
     },
     supprimer: async function (id) {
       if (confirm("Voulez-vous vraiment supprimer ce rapport?")) {
-        await axios("http://localhost:3002/gsb/rapport/" + id, {
+        await axios("http://localhost:8080/gsb/rapport/" + id, {
           method: "DELETE",
           withCredentials: true,
         });
