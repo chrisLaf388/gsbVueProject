@@ -33,9 +33,7 @@ export default {
   methods: {
     logout: async function () {
       await axios
-        .get("http://localhost:8080/gsb/logout", {
-          withCredentials: true,
-        })
+        .get("http://localhost:8080/gsb/logout")
         .catch((e) => {
           console.log(e);
         })
