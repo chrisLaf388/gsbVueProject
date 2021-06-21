@@ -60,11 +60,9 @@ export default {
   },
   methods: {
     listeRapportMotCle: async function () {
-      //recupérer login via localStorage pour afficher la liste des rapports lié aux visiteurs
-
       const dataJson = await axios
         .get(
-          "http://localhost:8080/gsb/rapport?champ=bilan&motcle=" +
+          "http://localhost:3002/gsb/rapport?champ=bilan&motcle=" +
             this.$store.getters.getMotCleFromStore,
           {
             headers: {
@@ -84,7 +82,6 @@ export default {
       this.$router.push("/rapportRedacteurFiche");
     },
   },
-  //"localhost:3002/gsb/rapport?champ=bilan&motcle="+this.$store.getters.getMotCleFromStore
   computed: {
     getMotCle: function () {
       return this.$store.getters.getMotCleFromStore;

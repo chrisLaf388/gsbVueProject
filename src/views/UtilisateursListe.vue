@@ -197,7 +197,7 @@ export default {
     listeUtilisateurs: async function (route) {
       this.getActive(route);
       await axios
-        .get("http://localhost:8080/gsb/" + route, {
+        .get("http://localhost:3002/gsb/" + route, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -227,7 +227,7 @@ export default {
     },
     supprimerUtilisateur: async function (id, route) {
       if (confirm("Voulez-vous vraiment supprimer cet utilisateur?")) {
-        await axios("http://localhost:8080/gsb/" + route + "/" + id, {
+        await axios("http://localhost:3002/gsb/" + route + "/" + id, {
           method: "DELETE",
           withCredentials: true,
         });

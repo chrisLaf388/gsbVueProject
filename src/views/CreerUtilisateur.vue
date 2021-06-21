@@ -143,7 +143,7 @@ export default {
     creerUtilisateur: async function () {
       switch (localStorage.getItem("route")) {
         case "visiteur":
-          await axios("http://localhost:8080/gsb/visiteur", {
+          await axios("http://localhost:3002/gsb/visiteur", {
             method: "POST",
             withCredentials: true,
             headers: {
@@ -169,7 +169,7 @@ export default {
           break;
 
         case "redacteurchercheur":
-          await axios("http://localhost:8080/gsb/redacteurchercheur", {
+          await axios("http://localhost:3002/gsb/redacteurchercheur", {
             method: "POST",
             withCredentials: true,
             headers: {
@@ -195,7 +195,7 @@ export default {
           break;
 
         case "rh":
-          await axios("http://localhost:8080/gsb/rh", {
+          await axios("http://localhost:3002/gsb/rh", {
             method: "POST",
             withCredentials: true,
             headers: {
