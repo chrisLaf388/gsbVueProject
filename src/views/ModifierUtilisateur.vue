@@ -120,7 +120,7 @@ export default {
   methods: {
     modifierUtilisateur: async function () {
       await axios(
-        "http://localhost:3002/gsb/" +
+        "http://localhost:8080/gsb/" +
           localStorage.getItem("route") +
           "/" +
           localStorage.getItem("utilisateurId"),

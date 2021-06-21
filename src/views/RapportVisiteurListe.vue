@@ -98,7 +98,7 @@ export default {
 
       const dataJson = await axios
         .get(
-          "http://localhost:3002/gsb/visiteur/" + this.getLogin + "/rapport",
+          "http://localhost:8080/gsb/visiteur/" + this.getLogin + "/rapport",
           {
             headers: {
               "Content-Type": "application/json",
@@ -122,7 +122,7 @@ export default {
     },
     supprimer: async function (id) {
       if (confirm("Voulez-vous vraiment supprimer ce rapport?")) {
-        await axios("http://localhost:3002/gsb/rapport/" + id, {
+        await axios("http://localhost:8080/gsb/rapport/" + id, {
           method: "DELETE",
           withCredentials: true,
         });
