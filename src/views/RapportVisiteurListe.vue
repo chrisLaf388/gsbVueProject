@@ -97,15 +97,12 @@ export default {
       //recupérer login via localStorage pour afficher la liste des rapports lié aux visiteurs
 
       const dataJson = await axios
-        .get(
-          "http://localhost:8080/gsb/visiteur/" + this.getLogin + "/rapport",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            withCredentials: true,
-          }
-        )
+        .get("https://localhost/gsb/visiteur/" + this.getLogin + "/rapport", {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        })
         .catch((e) => {
           console.log(e);
         })
@@ -122,7 +119,7 @@ export default {
     },
     supprimer: async function (id) {
       if (confirm("Voulez-vous vraiment supprimer ce rapport?")) {
-        await axios("http://localhost:8080/gsb/rapport/" + id, {
+        await axios("https://localhost/gsb/rapport/" + id, {
           method: "DELETE",
           withCredentials: true,
         });

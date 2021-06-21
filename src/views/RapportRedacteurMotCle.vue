@@ -62,7 +62,7 @@ export default {
     listeRapportMotCle: async function () {
       const dataJson = await axios
         .get(
-          "http://localhost:8080/gsb/rapport?champ=bilan&motcle=" +
+          "https://localhost/gsb/rapport?champ=bilan&motcle=" +
             this.$store.getters.getMotCleFromStore,
           {
             headers: {

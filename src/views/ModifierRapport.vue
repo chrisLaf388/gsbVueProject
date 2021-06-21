@@ -68,8 +68,7 @@ export default {
   methods: {
     modifierRapportRequest: async function () {
       await axios(
-        "http://localhost:8080/gsb/rapport/" +
-          localStorage.getItem("rapportId"),
+        "https://localhost/gsb/rapport/" + localStorage.getItem("rapportId"),
         {
           method: "PUT",
           withCredentials: true,
